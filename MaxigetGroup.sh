@@ -128,38 +128,38 @@ quttera=http://www.quttera.com/detailed_report/$checking_site
 					count_grep=1
 					echo $count_grep > /dev/null 2>&1
 			fi
-			grep 'Quttera Labs - domain is Clean.' sourse_site.log > /dev/null 2>&1
-				if (($? == 0))
-					then			
-						echo $count_grep > /dev/null 2>&1
-					else 
-						count_grep=2
-						echo $count_grep > /dev/null 2>&1
-				fi
-			grep 'Yandex-SafeBrowsing - domain is Clean' sourse_site.log > /dev/null 2>&1
-				if (($? == 0))
-					then			
-						echo $count_grep > /dev/null 2>&1
-					else 
-						count_grep=3
-						echo $count_grep > /dev/null 2>&1
-				fi 
-			grep 'Google-SafeBrowsing - domain is Clean.' sourse_site.log > /dev/null 2>&1
-				if (($? == 0))
-					then			
-						echo $count_grep > /dev/null 2>&1
-					else 
-						count_grep=4
-						echo $count_grep > /dev/null 2>&1
-				fi
-			grep 'MalwareDomainList - domain is Clean.' sourse_site.log > /dev/null 2>&1
-				if (($? == 0))
-					then			
-						echo $count_grep > /dev/null 2>&1
-					else 
-						count_grep=5
-						echo $count_grep > /dev/null 2>&1
-				fi
+			#grep 'Quttera Labs - domain is Clean.' sourse_site.log > /dev/null 2>&1
+			#	if (($? == 0))
+			#		then			
+			#			echo $count_grep > /dev/null 2>&1
+			#		else 
+			#			count_grep=2
+			#			echo $count_grep > /dev/null 2>&1
+			#	fi
+			# grep 'Yandex-SafeBrowsing - domain is Clean' sourse_site.log > /dev/null 2>&1
+			#	if (($? == 0))
+			#		then			
+			#			echo $count_grep > /dev/null 2>&1
+			#		else 
+			#			count_grep=3
+			#			echo $count_grep > /dev/null 2>&1
+			#	fi 
+			# grep 'Google-SafeBrowsing - domain is Clean.' sourse_site.log > /dev/null 2>&1
+			#	if (($? == 0))
+			#		then			
+			#			echo $count_grep > /dev/null 2>&1
+			#		else 
+			#			count_grep=4
+			#			echo $count_grep > /dev/null 2>&1
+			#	fi
+			# grep 'MalwareDomainList - domain is Clean.' sourse_site.log > /dev/null 2>&1
+			#	if (($? == 0))
+			#		then			
+			#			echo $count_grep > /dev/null 2>&1
+			#		else 
+			#			count_grep=5
+			#			echo $count_grep > /dev/null 2>&1
+			#	fi
 
 		if (($count_grep == 0))
 			then
