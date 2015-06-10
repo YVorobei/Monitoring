@@ -173,4 +173,5 @@ quttera=http://www.quttera.com/detailed_report/$checking_site
 		fi
 	done
 	echo ---------------------------------------- >> group_Maxiget.log
+	echo ----------------------------------------
 done
