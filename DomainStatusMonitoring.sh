@@ -1,3 +1,4 @@
+#!/bin/bash
 rm group_Maxiget.log
 rm sourse_site.log
 
