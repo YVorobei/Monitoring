@@ -47,7 +47,6 @@ quttera=http://www.quttera.com/detailed_report/$checking_site
 				   then
 				 echo $checking_site siteadvisor -- OK >> group_Maxiget.log
 				 echo $checking_site siteadvisor -- OK
-				 echo http://www.siteadvisor.com/sites/$checking_site -- OK
 		   	   else 
 				 echo $checking_site siteadvisor -- False >> group_Maxiget.log
 				 echo $checking_site siteadvisor -- False
