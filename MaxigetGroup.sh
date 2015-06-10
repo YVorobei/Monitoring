@@ -23,9 +23,9 @@ quttera=http://www.quttera.com/detailed_report/$checking_site
 		if ((count==0))
 		then
 		wget -O sourse_site.log $safebrowsing > /dev/null 2>&1
-		sleep 1s > /dev/null 2>&1
+		sleep 4s > /dev/null 2>&1
 		grep 'This site is not currently listed as suspicious.*0 page(s) resulted in malicious software being downloaded and installed without user consent' sourse_site.log  > /dev/null 2>&1
-	
+		
 		if (($? == 0))
 			   then
 			 echo $checking_site safebrowsing -- OK >> group_Maxiget.log
@@ -40,9 +40,9 @@ quttera=http://www.quttera.com/detailed_report/$checking_site
 		elif((count==1))
 			then
 			wget -O sourse_site.log $siteadvisor > /dev/null 2>&1
-			sleep 1s > /dev/null 2>&1
+			sleep 4s > /dev/null 2>&1
 			grep 'This link is safe. We tested it and didn'\''t find any significant security issues.\|This link isn'\''t rated. Either we don'\''t have enough information, or we haven'\''t tested 	it yet. Proceed with caution.' sourse_site.log  > /dev/null 2>&1
-	
+			
 			if (($? == 0))
 				   then
 				 echo $checking_site siteadvisor -- OK >> group_Maxiget.log
@@ -57,7 +57,7 @@ quttera=http://www.quttera.com/detailed_report/$checking_site
 		elif((count==2))
 			then
 			wget -O sourse_site.log --user-agent="Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:35.0) Gecko/20100101 Firefox/35.0" $avgthreatlabs > /dev/null 2>&1
-			sleep 1s > /dev/null
+			sleep 4s > /dev/null 2>&1
 			grep '<h2 class="green">Currently Safe</h2>' sourse_site.log > /dev/null 2>&1
 				if (($? == 0))
 					then			
@@ -88,7 +88,7 @@ quttera=http://www.quttera.com/detailed_report/$checking_site
 		elif((count==3))
 			then
 			wget -O sourse_site.log $sitecheck_sucuri > /dev/null 2>&1
-			sleep 1s > /dev/null
+			sleep 4s > /dev/null 2>&1
 			grep 'No Malware Detected by External Scan' sourse_site.log > /dev/null 2>&1
 				if (($? == 0))
 					then			
@@ -119,7 +119,7 @@ quttera=http://www.quttera.com/detailed_report/$checking_site
 		elif((count==4))
 			then
 			wget -O sourse_site.log $quttera > /dev/null 2>&1
-			sleep 1s > /dev/null	
+			sleep 4s > /dev/null 2>&1	
 			grep 'PhishTank - domain is Clean.' sourse_site.log > /dev/null 2>&1
 			if (($? == 0))
 				then			
