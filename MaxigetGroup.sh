@@ -112,9 +112,7 @@ quttera=http://www.quttera.com/detailed_report/$checking_site
 
 		elif((count==3))
 			then
-			#wget -O sourse_site4.log $sitecheck_sucuri > /dev/null 2>&1
-			wget -O sourse_site.log4 --user-agent="Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:35.0) Gecko/20100101 Firefox/35.0" $sitecheck_sucuri > /dev/null 2>&1
-			sleep 1s > /dev/null
+			wget -O sourse_site4.log $sitecheck_sucuri > /dev/null 2>&1
 			sleep 1s > /dev/null
 			grep 'No Malware Detected by External Scan' sourse_site4.log > /dev/null 2>&1
 				if (($? == 0))
