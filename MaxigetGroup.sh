@@ -3,7 +3,7 @@ rm group_Maxiget.log
 rm sourse_site.log
 
 #checklist sites
-sites_list=( maxiget.com getportal.net ex.ua )
+sites_list=( maxiget.com getportal.net )
 
 echo ----------------------------------------
 for checking_site in ${sites_list[@]}
