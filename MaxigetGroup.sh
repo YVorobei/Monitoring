@@ -112,7 +112,7 @@ quttera=http://www.quttera.com/detailed_report/$checking_site
 
 		elif((count==3))
 			then
-			wget -O sourse_site4.log $sitecheck_sucuri > /dev/null 2>&1
+			wget --no-check-certificate -O sourse_site4.log $sitecheck_sucuri > /dev/null 2>&1
 			sleep 1s > /dev/null
 			grep 'No Malware Detected by External Scan' sourse_site4.log > /dev/null 2>&1
 				if (($? == 0))
