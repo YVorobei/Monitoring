@@ -112,9 +112,9 @@ quttera=http://www.quttera.com/detailed_report/$checking_site
 
 		elif((count==3))
 			then
-			wget -O sourse_site.log $sitecheck_sucuri > /dev/null 2>&1
+			wget -O sourse_site4.log $sitecheck_sucuri > /dev/null 2>&1
 			sleep 1s > /dev/null
-			grep 'No Malware Detected by External Scan' sourse_site.log > /dev/null 2>&1
+			grep 'No Malware Detected by External Scan' sourse_site4.log > /dev/null 2>&1
 				if (($? == 0))
 					then			
 						echo $count_grep > /dev/null 2>&1
@@ -124,7 +124,7 @@ quttera=http://www.quttera.com/detailed_report/$checking_site
 						echo $count_grep > /dev/null 2>&1
 						echo $count_grep
 				fi
-			grep 'Not Currently Blacklisted <small>(10 Blacklists Checked)' sourse_site.log > /dev/null 2>&1
+			grep 'Not Currently Blacklisted <small>(10 Blacklists Checked)' sourse_site4.log > /dev/null 2>&1
 				if (($? == 0))
 					then			
 						echo $count_grep > /dev/null 2>&1
