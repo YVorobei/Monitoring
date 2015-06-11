@@ -81,22 +81,18 @@ quttera=http://www.quttera.com/detailed_report/$checking_site
 			if (($? == 0))
 				then			
 					echo $count_grep > /dev/null 2>&1
-					echo $count_grep
 				else 
 					count_grep=1
 					echo $count_grep > /dev/null 2>&1
-					echo $count_grep
 			fi
 			
 			grep 'No active malware was reported recently by users anywhere on this website' sourse_site.log > /dev/null 2>&1
 				if (($? == 0))
 					then			
 						echo $count_grep > /dev/null 2>&1
-						echo $count_grep
 					else 
 						count_grep=2
 						echo $count_grep > /dev/null 2>&1
-						echo $count_grep
 				fi
 				
 				if (($count_grep == 0))
@@ -118,21 +114,17 @@ quttera=http://www.quttera.com/detailed_report/$checking_site
 				if (($? == 0))
 					then			
 						echo $count_grep > /dev/null 2>&1
-						echo $count_grep
 					else 
 						count_grep=1
 						echo $count_grep > /dev/null 2>&1
-						echo $count_grep
 				fi
 			grep 'Not Currently Blacklisted <small>(10 Blacklists Checked)' sourse_site.log > /dev/null 2>&1
 				if (($? == 0))
 					then			
 						echo $count_grep > /dev/null 2>&1
-						echo $count_grep
 					else 
 						count_grep=2
 						echo $count_grep > /dev/null 2>&1
-						echo $count_grep
 				fi
 		if (($count_grep == 0))
 			then
