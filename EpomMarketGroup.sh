@@ -9,7 +9,7 @@ echo ----------------------------------------
 for checking_site in ${sites_list[@]}
 do
 
-safebrowsing=http://safebrowsing.clients.google.com/safebrowsing/diagnostic?site=$checking_site
+safebrowsing=https://www.google.com/safebrowsing/diagnostic?output=jsonp\&site=$checking_site
 siteadvisor=http://www.siteadvisor.com/sites/$checking_site
 avgthreatlabs=http://www.avgthreatlabs.com/ww-en/website-safety-reports/domain/$checking_site
 sitecheck_sucuri=https://sitecheck.sucuri.net/results/$checking_site
@@ -25,8 +25,8 @@ quttera=http://www.quttera.com/detailed_report/$checking_site
 		then
 		wget -O sourse_site.log $safebrowsing > /dev/null 2>&1
 		sleep 1s > /dev/null 2>&1
-		grep 'This site is not currently listed as suspicious.' sourse_site.log  > /dev/null 2>&1
-
+	        grep '"type": 0' sourse_site.log > /dev/null 2>&1
+		
 		if (($? == 0))
 			then			
 				echo $count_grep > /dev/null 2>&1
@@ -34,17 +34,7 @@ quttera=http://www.quttera.com/detailed_report/$checking_site
 				count_grep=1
 				echo $count_grep > /dev/null 2>&1
 		fi
-
-		grep '0 page(s) resulted in malicious software being downloaded and installed without user consent' sourse_site.log  > /dev/null 2>&1
-		
-		if (($? == 0))
-			then			
-				echo $count_grep > /dev/null 2>&1
-			else 
-				count_grep=2
-				echo $count_grep > /dev/null 2>&1
-		fi
-	
+			
 		if ((count_grep == 0))
 		   then
 			 echo $checking_site safebrowsing -- OK >> group_Maxiget.log
